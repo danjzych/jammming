@@ -1,0 +1,16 @@
+
+.TrackContainer {
+    margin: 0;
+    padding: .1rem .5rem;
+    border-bottom: .5px solid  #6D6875;
+}
+
+.trackName {
+    margin: .15rem auto;
+}
+
+.trackDetails {
+    margin: .15rem auto;
+    font-style: italic;
+    color: #6D6875;
+}

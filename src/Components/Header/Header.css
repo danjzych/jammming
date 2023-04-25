@@ -1,13 +1,30 @@
+@font-face {
+    font-family: 'Averta Bold';
+    src: url('./AvertaDemoPE-ExtraboldItalic.ttf')
+}
+
+.HeaderContainer {
+    grid-area: 1 / 1 / 2 / 1;
+    background: #B5838D;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100%;
+    border-bottom: 1px solid  #6D6875;
+}
+
 .header {
     color: black;
     text-align: center;
-    background: #B5838D;
+    margin-top: 0;
+    font-size: 3rem;
+    font-family: 'Averta Bold';
+    background: -webkit-linear-gradient(45deg, #FFCDB2, #E5989B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
 }
 
-h1 {
-    padding: .7rem .5rem;
-}
-
-span {
-    color: #FFB4A2;
+.align {
+    align-self: center;
+    padding: 0 1rem;
 }

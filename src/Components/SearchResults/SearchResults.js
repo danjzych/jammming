@@ -4,8 +4,8 @@ import './SearchResults.css';
 
 function SearchResults() {
     return (
-    <div>
-        <h2>results</h2>
+    <div className='SearchResultsContainer'>
+        <h2>Results</h2>
             <div className='results'>
             <Tracklist />
             </div>

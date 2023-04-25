@@ -1,0 +1,7 @@
+.TracklistContainer {
+    display: grid;
+    align-self: end;
+	grid-auto-rows: minmax(min-content, max-content);
+    overflow-y: scroll;
+    
+}

@@ -1,6 +1,25 @@
+.App-Container {
+  display: grid;
+  grid-template: repeat(7, 1fr) / 1fr;
+  height: 100%;
+}
+
+
 
 .App-playlist {
+  grid-area: 3 / 1 / 7 / 1;
   display: flex;
-  justify-content: space-around;
-  width: 100%;
+  justify-content: space-between;
+}
+
+footer {
+  grid-area: 7 / 1 / 8 / 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-style: italic;
+}
+
+.align {
+  align-items: center;
 }
