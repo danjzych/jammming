@@ -6,9 +6,7 @@ function SearchResults() {
     return (
     <div className='SearchResultsContainer'>
         <h2>Results</h2>
-            <div className='results'>
-            <Tracklist />
-            </div>
+        <Tracklist />
     </div>);
 };
 

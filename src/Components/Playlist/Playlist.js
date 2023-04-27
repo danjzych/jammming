@@ -6,9 +6,7 @@ function Playlist() {
     return (
     <div className='PlaylistContainer'>
         <h2>Playlist</h2>
-            <div className='Playlist'>
-            <Tracklist />
-            </div>
+        <Tracklist />
     </div>);
 };
 

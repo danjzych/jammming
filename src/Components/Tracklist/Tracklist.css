@@ -3,5 +3,5 @@
     align-self: end;
 	grid-auto-rows: minmax(min-content, max-content);
     overflow-y: scroll;
-    
+    height: 88.5%;
 }
