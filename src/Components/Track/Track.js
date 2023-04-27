@@ -5,10 +5,10 @@ function Track(props) {
     return (
         <div className='TrackContainer'>
             <div className='TrackInfo'>
-                <h3 className='trackName'>Track Name</h3>
-                <p className='trackDetails'>Artist | Album</p>
+                <h3 className='trackName'>{props.title}</h3>
+                <p className='trackDetails'>{props.artist} | {props.album}</p>
             </div>
-            <button type='button'>+</button>
+            <button type='button'>{props.button}</button>
         </div>
     );
 };

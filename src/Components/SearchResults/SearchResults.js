@@ -2,11 +2,13 @@ import React from 'react';
 import Tracklist from '../Tracklist/Tracklist';
 import './SearchResults.css';
 
-function SearchResults() {
+function SearchResults(props) {
     return (
     <div className='SearchResultsContainer'>
+        <div className='playlistHeader'>
         <h2>Results</h2>
-        <Tracklist />
+        </div>
+        <Tracklist button='+' title='Track' artist='Artist' album='Album'/>
     </div>);
 };
 
