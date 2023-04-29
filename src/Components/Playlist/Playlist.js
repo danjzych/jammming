@@ -12,12 +12,12 @@ function Playlist(props) {
             <button class='noBorder'>
                 <img src={saveIcon} />
             </button>
-            <h2>{props.playlist.name}</h2>
+            <h2>{props.playlistName}</h2>
             <button class='noBorder'>
                 <img src={trashIcon} />
             </button>
         </div>
-        <Tracklist button='-' testData={props.playlist.tracks}/>
+        <Tracklist button='-' testData={props.playlist} handleRemove={props.handleRemove}/>
     </div>);
 };
 
