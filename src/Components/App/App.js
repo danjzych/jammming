@@ -77,13 +77,13 @@ function App() {
   ]);
   const [ playlist, setPlaylist ] = useState(
         [{
-        id: 1,
+        id: 12,
         title: 'Test Track 0',
         artist: 'Test Artist',
         album: 'Test Album'
         },
        {
-        id: 2,
+        id: 13,
         title: 'Test Track 00',
         artist: 'Test Artist 2',
         album: 'Test Album 2'
@@ -99,11 +99,14 @@ function App() {
     }
 
 
-    const handleRemove = (props) => {
-      alert('it also worked')
+    const handleRemove = (track) => {
+      setPlaylist((tracks) => {tracks.filter((currentTrack) => currentTrack.id !== track.id)})
+      //this is removing both tracks - why?
     };
 
-    //const handlePlaylistRename = (props) => {}
+    const updatePlaylistName = (name) => {
+      setPlaylistName(name)
+    }
 
   return (
     <div className='App-Container'>
@@ -111,7 +114,11 @@ function App() {
       <SearchBar />
       <div className='App-playlist'>
         <SearchResults testData={testData} handleAdd={handleAdd}/>
-        <Playlist playlistName={playlistName} playlist={playlist} handleRemove={handleRemove}/>
+        <Playlist playlistName={playlistName}
+          playlist={playlist}
+          handleRemove={handleRemove}
+          onPlaylistNameChange={updatePlaylistName}
+        />
       </div>
       <footer>
         <div className='align'>
