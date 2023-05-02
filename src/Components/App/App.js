@@ -94,14 +94,17 @@ function App() {
       //maybe grey out track after it has been added?
   }
 
+  const removeTrack = (track) => {
+    setPlaylist(prevPlaylist => prevPlaylist.filter((removedTrack) => removedTrack.id !== track.id))
+  };
 
-    const removeTrack = (track) => {
-      setPlaylist(prevPlaylist => {prevPlaylist.filter((currentTrack) => currentTrack.id !== track.id)})
-    };
+  const updatePlaylistName = (name) => {
+    setPlaylistName(name)
+  }
 
-    const updatePlaylistName = (name) => {
-      setPlaylistName(name)
-    }
+  const resetPlaylist = () => {
+    //this function will clear the playlist and reset name to default
+  };
 
   return (
     <div className='App-Container'>
