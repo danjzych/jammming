@@ -75,33 +75,28 @@ function App() {
       album: 'Test Album 3'
       },
   ]);
-  const [ playlist, setPlaylist ] = useState(
-        [{
-        id: 12,
-        title: 'Test Track 0',
-        artist: 'Test Artist',
-        album: 'Test Album'
-        },
-       {
-        id: 13,
-        title: 'Test Track 00',
-        artist: 'Test Artist 2',
-        album: 'Test Album 2'
-        },]
-  );
+  const [ playlist, setPlaylist ] = useState([]);
   const [playlistName, setPlaylistName] = useState('name your playlist...');
     
-    const handleAdd = (props) => {
-      alert('itworked');
-      //if track is not already in playlist.tracks, add to playlist.tracks
-        //verify by using id
-        //if already in playlist.tracks, alert "this track is already in your playlist"
-    }
+  const addTrack = (track) => {
+
+    if (playlist === undefined) {
+      setPlaylist([track])
+    } else if (playlist.some((savedTrack) => savedTrack.id === track.id)) {
+      alert('this track is already in your playlist')
+      //any track can be added once, and then always get alert - why?
+          //tested with title, and it works properly for title...
+          //I ended up solving by realizing that setting key=prop.id was creating the issue. Making id=prop.id and changing the key solved this. Currently unsure why but hoping to uncover as I continue going/learning.
+    } else {
+      setPlaylist((prevTracks) => [...prevTracks, track]);
+    };
+      
+      //maybe grey out track after it has been added?
+  }
 
 
-    const handleRemove = (track) => {
-      setPlaylist((tracks) => {tracks.filter((currentTrack) => currentTrack.id !== track.id)})
-      //this is removing both tracks - why?
+    const removeTrack = (track) => {
+      setPlaylist(prevPlaylist => {prevPlaylist.filter((currentTrack) => currentTrack.id !== track.id)})
     };
 
     const updatePlaylistName = (name) => {
@@ -113,10 +108,10 @@ function App() {
       <Header />
       <SearchBar />
       <div className='App-playlist'>
-        <SearchResults testData={testData} handleAdd={handleAdd}/>
+        <SearchResults testData={testData} onTrackAdd={addTrack}/>
         <Playlist playlistName={playlistName}
           playlist={playlist}
-          handleRemove={handleRemove}
+          onTrackRemove={removeTrack}
           onPlaylistNameChange={updatePlaylistName}
         />
       </div>

@@ -3,11 +3,11 @@ import './Track.css'
 
 function Track(props) {
 
-    const handleClick = (props) => {
+    const handleClick = (event) => {
         if (props.button === '+') {
-            props.handleAdd(props)
+            props.onTrackAdd(props)
         } else {
-            props.handleRemove(props);
+            props.onTrackRemove(props);
         }}
 
     return (

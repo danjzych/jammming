@@ -21,7 +21,7 @@ function Playlist(props) {
                 <img src={trashIcon} />
             </button>
         </div>
-        <Tracklist button='-' testData={props.playlist} handleRemove={props.handleRemove}/>
+        <Tracklist button='-' testData={props.playlist} onTrackRemove={props.onTrackRemove}/>
     </div>);
 };
 
