@@ -28,3 +28,9 @@ input {
 .align {
     align-self: center;
 }
+
+#searchButton {
+    background-color: azure;
+    border: 0px;
+    margin-right: 0px;
+}

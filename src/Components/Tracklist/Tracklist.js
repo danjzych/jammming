@@ -6,12 +6,13 @@ function Tracklist(props) {
 
   return (
        <div className='TracklistContainer'>
-        {props.testData?.map((track) => {
+        {props.tracks?.map((track) => {
           return (
              <Track button={props.button}
               id={track.id}
               key={track.id + track.title}
-              title={track.title}
+              uri={track.uri}
+              name={track.name}
               artist={track.artist}
               album={track.album}
               onTrackAdd={props.onTrackAdd}
