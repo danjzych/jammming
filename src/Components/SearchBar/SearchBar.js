@@ -18,7 +18,7 @@ function SearchBar(props) {
     return (
         <div className='SearchBarContainer'>
             <div className='SearchBar align'>
-                <input placeholder='Enter your search here' className='align' onChange={handleTermChange}/>
+                <input placeholder='Search a name or genre' className='align' onChange={handleTermChange}/>
                 <button id='searchButton' onClick={handleSearch}><img src={SearchIcon} className='align'/></button>
             </div>          
         </div>
